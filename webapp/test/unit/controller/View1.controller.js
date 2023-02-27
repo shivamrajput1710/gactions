@@ -13,4 +13,13 @@ sap.ui.define([
 		assert.ok(oAppController);
 	});
 
+	QUnit.module("Module B"); 
+
+	QUnit.test("1. a basic test example", function (assert) {
+			 
+			var value = "hello1"; 
+			assert.equal(value, "hello1", "We expect value to be 'hello1'"); 
+			assert.ok(true, "this test is fine");
+	});
+
 });
