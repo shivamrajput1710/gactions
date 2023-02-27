@@ -2,7 +2,7 @@ name: Unit Testing
 
 on:
   push:
-    branches: [ devlopment ]
+    branches: [ dev2 ]
 
 
 jobs:
