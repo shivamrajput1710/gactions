@@ -35,5 +35,8 @@
       "@sap/ux-ui5-tooling"
     ]
   },
-  "sapuxLayer": "CUSTOMER_BASE"
+  "sapuxLayer": "CUSTOMER_BASE",
+  "dependencies": {
+    "chrome-headless": "^0.1.5"
+  }
 }
