@@ -17,7 +17,7 @@ sap.ui.define([
 
 	QUnit.test("1. a basic test example", function (assert) {
 			 
-			var value = "hello3"; 
+			var value = "hello1"; 
 			assert.equal(value, "hello3", "We expect value to be 'hello1'"); 
 		//jQuery.sap.log.info(assert.equal(value, "hello21", "We expect value to be 'hello1'"))
 			
