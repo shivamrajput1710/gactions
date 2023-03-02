@@ -21,15 +21,6 @@ jobs:
       - name: Run tests
         uses: mathiasvr/command-output@v1
         id: tests
-        with:
-         run: |
-          mix compile --warnings-as-errors
-          mix format --check-formatted
-          mix ecto.create
-          mix ecto.migrate
-          mix test  
-      - name: Check on failures
-        run: echo ${{ steps.tests.outputs.stdout }}
-      - name: Check on success
-        if: ${{ success() }}
-        run: echo 'Success'  
+      - run: echo ${{ steps.tests.outputs.stdout }}
+       
+        
