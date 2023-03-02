@@ -17,13 +17,9 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
-  testcase_output:
-    needs: [test_push_request]
-    runs-on: windows-latest
-    steps:
-      - name: Check Result of Previous Job
-        if: needs.test_push_request.steps.unitTest.outcome != 'success'
-        run:  echo 'Failure'     
+      - name: Next Step
+        run:  echo 'Success'
+     
     
      
         
