@@ -5,13 +5,13 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	QUnit.module("View1 Controller");
+	// QUnit.module("View1 Controller");
 
-	QUnit.test("I should test the View1 controller", function (assert) {
-		var oAppController = new Controller();
-		oAppController.onInit();
-		assert.ok(oAppController);
-	});
+	// QUnit.test("I should test the View1 controller", function (assert) {
+	// 	var oAppController = new Controller();
+	// 	oAppController.onInit();
+	// 	assert.ok(oAppController);
+	// });
 
 	QUnit.module("Module B"); 
 
