@@ -23,7 +23,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check Result of Previous Job
-        run:  echo ${{test_push_request.steps.unitTest.outcome}}     
+        run:  echo ${{needs.test_push_request.steps.unitTest.outcome}}     
     
      
         
