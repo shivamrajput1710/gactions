@@ -10,7 +10,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Run Test Case
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: mathiasvr/command-output@v1
       - uses: actions/setup-node@v1
         id: unitTest
         with:
@@ -18,11 +19,8 @@ jobs:
       - run: npm ci
       - run: npm test
         continue-on-error: true
-      - name: Get today's date
-        uses: mathiasvr/command-output@v1
-        id: today
       - name: Check on success
-        run: echo Today is ${{ steps.today.outputs.stdout }}  
+        run: echo Today is ${{ steps.unitTest.outputs.stdout }}  
 
 
        
