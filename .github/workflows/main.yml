@@ -18,9 +18,18 @@ jobs:
       - run: npm ci
       - run: npm test
         continue-on-error: true
+      - name: Run tests
+        uses: mathiasvr/command-output@v1
+        id: tests
+        with:
+         run: |
+          mix compile --warnings-as-errors
+          mix format --check-formatted
+          mix ecto.create
+          mix ecto.migrate
+          mix test  
       - name: Check on failures
-        if: ${{ failure() }}
-        run: echo 'Failure'
+        run: echo ${{ steps.tests.outputs.stdout }}
       - name: Check on success
         if: ${{ success() }}
         run: echo 'Success'  
