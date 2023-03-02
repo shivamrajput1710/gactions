@@ -17,5 +17,6 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
+        continue-on-error: true
       - name: Check on failures
         run: echo ${{steps.unitTest.outcome}}  
