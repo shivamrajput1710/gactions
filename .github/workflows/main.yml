@@ -18,9 +18,12 @@ jobs:
       - run: npm ci
       - run: npm test
         continue-on-error: true
-      - name: Run tests
+      - name: Get today's date
         uses: mathiasvr/command-output@v1
-        id: tests
-      - run: echo ${{ steps.tests.outputs.stdout }}
+        id: today
+      - name: Check on success
+        run: echo Today is ${{ steps.today.outputs.stdout }}  
+
+
        
         
