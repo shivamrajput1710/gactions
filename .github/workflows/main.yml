@@ -18,6 +18,11 @@ jobs:
       - run: npm ci
       - run: npm test
         continue-on-error: true
+  testcase_output:
+    runs-on: windows-latest
+    steps:
+      - name: Check Result of Previous Job
+        run:  echo ${{test_push_request.steps.unitTest.outcome}}     
     
      
         
