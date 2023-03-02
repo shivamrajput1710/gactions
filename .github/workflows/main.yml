@@ -18,8 +18,9 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
-      - run: echo Today is ${{ steps.unitTest.outputs.stdout }}
         continue-on-error: true
+      - name: Show result 
+        run: echo ${{ steps.unitTest.outputs.stdout }}
      
         
 
