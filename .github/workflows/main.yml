@@ -20,7 +20,7 @@ jobs:
       - run: npm test
         continue-on-error: true
       - name: Check on success
-        run: echo Today is ${{ steps.unitTest.outputs.stdout }}  
+      - run: echo Today is ${{ steps.unitTest.outputs.stdout }}  
 
 
        
