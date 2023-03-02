@@ -19,4 +19,4 @@ jobs:
       - run: npm test
         continue-on-error: true
       - name: Check on failures
-        run: echo steps.unitTest.outcome  
+        run: echo ${{steps.unitTest.outcome}}  
