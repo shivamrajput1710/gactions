@@ -20,4 +20,7 @@ jobs:
         continue-on-error: true
       - name: Check on failures
         if: ${{ failure() }}
-        run: echo 'Failure'  
+        run: echo 'Failure'
+      - name: Check on success
+        if: ${{ success() }}
+        run: echo 'Success'  
