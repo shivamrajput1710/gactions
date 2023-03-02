@@ -19,7 +19,7 @@ jobs:
       - run: npm test
       - name: Check on failures
         if: steps.unitTest.outcome != 'success' 
-        run: echo Test case Failed
+        run: echo 'Test case Failed'
       - name: Check on Success
         if: steps.unitTest.outcome == 'success' 
-        run: echo Test case successfull
+        run: echo 'Test case successfull'
