@@ -17,13 +17,13 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
-        continue-on-error: true
   testcase_output:
     needs: [test_push_request]
     runs-on: windows-latest
     steps:
       - name: Check Result of Previous Job
-        run:  echo ${{needs.test_push_request.steps.unitTest.outcome}}     
+        if: needs.test_push_request.steps.unitTest.outcome != 'success'
+        run:  echo 'Failure'     
     
      
         
