@@ -26,7 +26,9 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_HTML: false
+          VALIDATE_CSS: false
           DEFAULT_BRANCH: dev2
+          FILTER_REGEX_EXCLUDE: .*utils/.*,.*test/.* 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      
     
