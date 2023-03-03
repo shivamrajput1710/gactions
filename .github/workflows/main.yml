@@ -11,14 +11,22 @@ jobs:
     steps:
       - name: Run Test Case
         uses: actions/checkout@v2
+        with:
+          # Full git history is needed to get a proper
+          # list of changed files within `super-linter`
+          fetch-depth: 0
       - uses: actions/setup-node@v1
         id: unitTest
         with:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
-      - name: Next Step
-        run:  echo 'Success'
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: dev2
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      
     
      
