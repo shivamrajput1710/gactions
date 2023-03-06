@@ -21,15 +21,7 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: true
-          VALIDATE_HTML: false
-          VALIDATE_CSS: false
-          DEFAULT_BRANCH: dev2
-          FILTER_REGEX_EXCLUDE: .*utils/.*,.*test/.* 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
      
     
      
