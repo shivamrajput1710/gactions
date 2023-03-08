@@ -21,6 +21,16 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
+      - name: Make Request
+        id: myRequest
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: "https://services.odata.org/v4/northwind/northwind.svc/Customers"
+      - name: Show Response
+        run: |
+          echo ${{ steps.myRequest.outputs.response }}
+          echo ${{ steps.myRequest.outputs.headers }}
+          echo ${{ fromJson(steps.myRequest.outputs.response)}}
 
      
     
