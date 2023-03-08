@@ -29,7 +29,6 @@ jobs:
           method: 'POST'
           username: 'khl.sakshi55@gmail.com'
           password: 'ATATT3xFfGF0w8bzQZKxmmWUOYWwriz5Xg-GT4hhY0nHwzOnly3XAbUyBjjqFWEEQ5aJjqA-4XqUN7-8KC1a3e81hMYJ9L8Oo4PglG-69c6tqrEI-4H5r9dpUeOXHi9_UvnqW72DwIil3xewwILN9pfUuBisUCj_NdLYw-mgLkPb1TwgW9dV-PY=E4128EAD'
-          customHeaders: '{"Content-Type": "application/json"}'
           data: '{"fields": {"project": {"id": 10000 },"summary": "Creating rest api github action.",  "description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}'
 
      
