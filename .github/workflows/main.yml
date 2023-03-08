@@ -26,6 +26,7 @@ jobs:
         uses: fjogeleit/http-request-action@v1
         with:
           url: "https://services.odata.org/v4/northwind/northwind.svc/Customers"
+          method: 'GET'
       - name: Show Response
         run: |
           echo ${{ steps.myRequest.outputs.response }}
