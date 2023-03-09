@@ -29,7 +29,7 @@ jobs:
           method: 'POST'
           username: ${{ secrets.JIRA_USERNAME }}
           password: ${{ secrets.JIRA_PAT }}
-          data: '{"fields": {"project": {"id": 10000 },"summary": "Creating rest api  github action 19.",  "description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}'
+          data: '{"fields": {"project": {"id": 10000 },"summary": "Creating rest api  github action 20.",  "description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}'
       - name: Show Response
         run: |
          echo ${{ fromJson(steps.myRequest.outputs.response).id }}
