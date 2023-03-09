@@ -29,10 +29,18 @@ jobs:
           method: 'POST'
           username: ${{ secrets.JIRA_USERNAME }}
           password: ${{ secrets.JIRA_PAT }}
-          data: '{"fields": {"project": {"id": 10000 },"summary": "Creating rest api  github action 21.",  "description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}'
+          data: '{"fields": {"project": {"id": 10000 },"summary": "Creating rest api and updating status.",  "description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}'
       - name: Show Response
         run: |
          echo ${{ fromJson(steps.myRequest.outputs.response).id }}
+      - name: Update Status
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ format('{0}{1}/{2}', secrets.JIRA_URL, fromJson(steps.myRequest.outputs.response).id, transitions) }}
+          method: 'POST'
+          username: ${{ secrets.JIRA_USERNAME }}
+          password: ${{ secrets.JIRA_PAT }}
+          data: '{"transition": {"id": "21"}}'   
      
     
      
