@@ -36,7 +36,7 @@ jobs:
       - name: Update Status
         uses: fjogeleit/http-request-action@v1
         with:
-          url: ${{ format('{0}{1}/{2}', secrets.JIRA_URL, fromJson(steps.myRequest.outputs.response).id, transitions) }}
+          url: ${{ format('{0}{1}/{2}', secrets.JIRA_URL, fromJson(steps.myRequest.outputs.response).id, 'transitions') }}
           method: 'POST'
           username: ${{ secrets.JIRA_USERNAME }}
           password: ${{ secrets.JIRA_PAT }}
