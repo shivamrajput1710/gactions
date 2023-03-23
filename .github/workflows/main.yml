@@ -25,10 +25,11 @@ jobs:
         id: myRequestint
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://980934bbtrial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com/api/1.0/transportcontents/466ca134-c989-11ed-bb2c-eeee0a8a861a?fetchStatus=true&rootURL=runs%2FMTAR_EXPORT%2F466ca134-c989-11ed-bb2c-eeee0a8a861a&mode=SLS'
-          method: 'GET'
+          url: 'https://980934bbtrial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com/api/1.0/transportcontents'
+          method: 'POST'
           username: 'shivamrajput1710@gmail.com'
           password: 'Shivam@123'
+          data: '{"id":"1bf3a19c9b5b4d7887695f9fde72bf66","displayName":"Int Flow","technicalName":"IntFlow","version":"1.0.0","type":"ContentPackage","comments":"rrr"}'
       - name: Make Request to JIRA
         id: myRequest
         uses: fjogeleit/http-request-action@v1
