@@ -21,6 +21,14 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
+      - name: POST to int
+        id: myRequestint
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://980934bbtrial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com/api/1.0/transportcontents/466ca134-c989-11ed-bb2c-eeee0a8a861a?fetchStatus=true&rootURL=runs%2FMTAR_EXPORT%2F466ca134-c989-11ed-bb2c-eeee0a8a861a&mode=SLS'
+          method: 'GET'
+          username: 'shivamrajput1710@gmail.com'
+          password: 'Shivam@123'
       - name: Make Request to JIRA
         id: myRequest
         uses: fjogeleit/http-request-action@v1
