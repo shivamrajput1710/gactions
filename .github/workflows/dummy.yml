@@ -1,4 +1,4 @@
-name: Unit Testing
+name: Repo Dispatch
 
 on:
   repository_dispatch:
