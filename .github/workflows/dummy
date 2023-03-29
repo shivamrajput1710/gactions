@@ -1,57 +1,16 @@
 name: Unit Testing
 
 on:
-  push:
-    branches: [ dev2 ]
+  repository_dispatch:
 
 
 jobs:
-  test_push_request:
+  trigger_sap:
     runs-on: ubuntu-latest
     steps:
       - name: Run Test Case
-        uses: actions/checkout@v2
-        with:
-          # Full git history is needed to get a proper
-          # list of changed files within `super-linter`
-          fetch-depth: 0
-      - uses: actions/setup-node@v1
-        id: unitTest
-        with:
-          node-version: 16.19.0
-      - run: npm ci
-      - run: npm test
-      - name: POST to int
-        id: myRequestint
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: 'https://980934bbtrial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com/api/1.0/transportcontents'
-          method: 'POST'
-          username: 'Shivamrajput1710@gmail.com'
-          password: 'Shivam@123'
-          customHeaders: '{"X-CSRF-Token":"b4fbecd00b33c26c-ZSjf4RhAdqw19DC9No5l3QZZlwU"}'
-          data: '{"id":"1bf3a19c9b5b4d7887695f9fde72bf66","displayName":"Int Flow","technicalName":"IntFlow","version":"1.0.0","type":"ContentPackage","comments":"rrr"}'
-      - name: Make Request to JIRA
-        id: myRequest
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: ${{ secrets.JIRA_URL }}
-          method: 'POST'
-          username: ${{ secrets.JIRA_USERNAME }}
-          password: ${{ secrets.JIRA_PAT }}
-          data: '{"fields": {"project": {"id": 10000 },"summary": "Creating rest api and updating status.",  "description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}'
-      - name: Show Response
-        run: |
-         echo ${{ fromJson(steps.myRequest.outputs.response).id }}
-      - name: Update Status
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: ${{ format('{0}{1}/{2}', secrets.JIRA_URL, fromJson(steps.myRequest.outputs.response).id, 'transitions') }}
-          method: 'POST'
-          username: ${{ secrets.JIRA_USERNAME }}
-          password: ${{ secrets.JIRA_PAT }}
-          data: '{"transition": {"id": "21"}}'   
-     
+      - run: echo 'Chal gaya'
+         
     
      
         
