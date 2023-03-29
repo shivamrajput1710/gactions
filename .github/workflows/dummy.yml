@@ -2,6 +2,7 @@ name: Unit Testing
 
 on:
   repository_dispatch:
+    types: [on-demand-test]
 
 
 jobs:
