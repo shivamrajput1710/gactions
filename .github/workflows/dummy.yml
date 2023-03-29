@@ -1,0 +1,13 @@
+name: Repo Dispatch
+
+on:
+  repository_dispatch:
+    types: [on-demand-test]
+
+
+jobs:
+  trigger_sap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test Case
+        run: echo 'Chal gaya'
