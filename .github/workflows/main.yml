@@ -3,6 +3,8 @@ name: Unit Testing
 on:
   push:
     branches: [ dev2 ]
+  repository_dispatch:
+    types: [on-demand-test]  
 
 
 jobs:
