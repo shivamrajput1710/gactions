@@ -1,0 +1,12 @@
+name: Unit Testing
+
+on:
+  repository_dispatch:
+
+
+jobs:
+  trigger_sap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test Case
+      - run: echo 'Chal gaya'
