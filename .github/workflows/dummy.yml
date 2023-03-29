@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Test Case
-      - run: echo 'Chal gaya'
+        run: echo 'Chal gaya'
