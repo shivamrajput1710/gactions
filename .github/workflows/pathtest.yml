@@ -5,7 +5,7 @@ on:
       - 'test/**' 
 jobs: 
   create_issue: 
-    runs-on: ubuntu-18.04 
+    runs-on: ubuntu-latest 
     steps: 
       - name: Create issue using REST API 
         run: echo 'Hello'
