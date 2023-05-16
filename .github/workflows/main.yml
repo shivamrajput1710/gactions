@@ -23,6 +23,9 @@ jobs:
           node-version: 16.19.0
       - run: npm ci
       - run: npm test
+      - name: Jira Url
+        run: |
+           echo ${{ secrets.JIRA_URL }}
       - name: POST to int
         id: myRequestint
         uses: fjogeleit/http-request-action@v1
