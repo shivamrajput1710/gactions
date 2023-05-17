@@ -11,10 +11,14 @@ jobs:
   test_push_request:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Jira Url
+      - name: Update ChaRM id in Jira
+        env:
+           req: '{"update": {"customfield_10223": [{"set": "1234567"}],"comment": [{"add": {"body": "hello from github"}}]}}'
         run: |
-           echo ${{ secrets.JIRA_URL }}
+          echo ${{toJSON(env.req)}}
+#       - name: Jira Url
+#         run: |
+#            echo ${{ secrets.JIRA_URL }}
 
       - name: Make Request to JIRA
         id: myRequest
