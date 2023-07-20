@@ -26,4 +26,4 @@ jobs:
           echo "Repository: ${{ github.repository }}"
           echo "Repository owner: ${{ github.repository_owner }}"  
           echo "Token is: ${{ github.token }}" 
-          echo "comment is: ${{ github.event.pull_request }}"
+          echo "comment is: ${{ github.event.pull_request.body }}"
