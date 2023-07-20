@@ -1,8 +1,10 @@
 name: Repo Dispatch
 
 on:
-  repository_dispatch:
-    types: [on-demand-test]
+  pull_request_review:
+    types: [submitted]
+    paths-ignore:
+      - '.github/**'
 
 
 jobs:
@@ -10,4 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Test Case
-        run: echo 'Chal gaya'
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Branch name
+        run: |
+          echo "Branch name: ${{ github.ref }}"
+      - name: Get repository info
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Repository owner: ${{ github.repository_owner }}"  
+          echo "Token is: ${{ github.token }}" 
+          echo "comment is: ${{ github.event.head_commit.message }}"
