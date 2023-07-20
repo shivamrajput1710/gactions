@@ -10,12 +10,34 @@ on:
 jobs:
   test_push_request:
     runs-on: ubuntu-latest
-    steps:
-      - name: TO JSOn
-        env:
-          req: '{"update": {"customfield_10223": [{"set": "1234567"}],"comment": [{"add": {"body": "hello from github"}}]}}'
-        run: |
-             echo "${{fromJSON(env.req).update}}"
+#     steps:
+# <<<<<<< dev2
+#       - name: Update ChaRM id in Jira
+#         env:
+#            req: '{"update": {"customfield_10223": [{"set": "1234567"}],"comment": [{"add": {"body": "hello from github"}}]}}'
+#         run: |
+#           echo ${{toJSON(env.req)}}
+# #       - name: Jira Url
+# #         run: |
+# #            echo ${{ secrets.JIRA_URL }}
+
+#       - name: Make Request to JIRA
+#         id: myRequest
+#         uses: fjogeleit/http-request-action@v1
+#         with:
+#           url: ${{ secrets.JIRA_URL }}
+#           method: 'POST'
+#           username: ${{ secrets.JIRA_USERNAME }}
+#           password: ${{ secrets.JIRA_PAT }}
+#           data: '{"fields": {"project": {"id": 10000 },"summary": "Creating rest api and updating status.",  "description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}'
+#       - name: Show Response
+# =======
+#       - name: TO JSOn
+#         env:
+#           req: '{"update": {"customfield_10223": [{"set": "1234567"}],"comment": [{"add": {"body": "hello from github"}}]}}'
+# >>>>>>> main
+#         run: |
+#              echo "${{fromJSON(env.req).update}}"
 #       - name: Run Test Case
 #         uses: actions/checkout@v2
 #         with:

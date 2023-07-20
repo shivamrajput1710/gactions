@@ -1,0 +1,11 @@
+name: Create issue on commit 
+on: 
+  push: 
+    paths: 
+      - 'test/**' 
+jobs: 
+  create_issue: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Create issue using REST API 
+        run: echo 'Hello'
