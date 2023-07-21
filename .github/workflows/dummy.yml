@@ -21,6 +21,7 @@ jobs:
       - name: Branch name
         run: |
           echo "Branch name: ${{ github.ref }}"
+          echo "target repo: ${{ github.event.pull_request.base.ref }}"
       - name: Get repository info
         run: |
           echo "Repository: ${{ github.repository }}"
